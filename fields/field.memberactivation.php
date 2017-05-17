@@ -439,7 +439,7 @@
 			$wrapper->appendChild($el);
 		}
 
-		public function prepareTableValue($data, XMLElement $link=NULL, $entry_id = null) {
+		public function prepareTableValue($data, XMLElement $link = NULL, $entry_id = null) {
 			return parent::prepareTableValue(array(
 				'value' => ($data['activated'] == 'yes') ? __('Activated') : __('Not Activated')
 			), $link, $entry_id);
@@ -453,7 +453,7 @@
 		Sorting:
 	-------------------------------------------------------------------------*/
 
-		public function buildSortingSQL(&$joins, &$where, &$sort, $order='ASC') {
+		public function buildSortingSQL(&$joins, &$where, &$sort, $order = 'ASC', &$select = NULL) {
 			if(in_array(strtolower($order), array('random', 'rand'))) {
 				$sort = 'ORDER BY RAND()';
 			}
